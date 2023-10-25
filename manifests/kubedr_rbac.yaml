@@ -2,16 +2,16 @@ apiVersion: v1
 kind: Namespace
 metadata:  
   labels:
-    app: kubedr
-  name: kubedr
+    app: kubepilot
+  name: kubepilot
 
 ---
 
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: kubedr
-  namespace: kubedr
+  name: kubepilot
+  namespace: kubepilot
 
 ---
 
@@ -21,7 +21,7 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: kubedr-readonly
+  name: kubepilot-readonly
 rules:
 - apiGroups: [""]
   resources: ["*"]
@@ -40,12 +40,12 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: kubedr-read-only
+  name: kubepilot-read-only
 subjects:
 - kind: ServiceAccount
-  name: kubedr
-  namespace: kubedr
+  name: kubepilot
+  namespace: kubepilot
 roleRef:
   kind: ClusterRole
-  name: kubedr-readonly
+  name: kubepilot-readonly
   apiGroup: rbac.authorization.k8s.io

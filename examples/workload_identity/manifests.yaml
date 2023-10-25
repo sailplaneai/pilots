@@ -3,8 +3,8 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
-    iam.gke.io/gcp-service-account: esp-echo@kubedr.iam.gserviceaccount.com
+    iam.gke.io/gcp-service-account: esp-echo@kubepilot.iam.gserviceaccount.com
   labels:
     app: esp-echo
   name: esp-echo
-  namespace: kubedr-examples
+  namespace: kubepilot-examples
