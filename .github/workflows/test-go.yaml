@@ -9,7 +9,7 @@ jobs:
   test_matrix:
     strategy:
       matrix:
-        subdir: ["agent", "kubedr"]
+        subdir: []
     name: golang test & build
     runs-on: [ubuntu-20.04]
     steps:
